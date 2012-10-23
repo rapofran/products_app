@@ -3,7 +3,9 @@
     <%= f.label :image, :class => 'control-label' %>
     <div class="controls">
       <%= f.file_field :image %>
-      <%= image_tag @product.image_url.to_s %>
+      <% unless @product.image_url.to_s.empty? %>
+        <%= image_tag @product.image_url(:thumb).to_s %>
+      <% end %>
     </div>
   </div>
   <div class="control-group">

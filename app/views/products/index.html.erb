@@ -18,7 +18,7 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= link_to product.id, product_path(product) %></td>
-        <td><%= image_tag product.image_url.to_s %></td>        
+        <td><%= image_tag product.image_url(:thumb).to_s %></td>        
         <td><%= product.name %></td>
         <td><%= product.description %></td>
         <td><%= product.price %></td>

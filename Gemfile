@@ -8,7 +8,7 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem "twitter-bootstrap-rails"
 
 gem 'carrierwave' #upload de imagenes, y thumbnail
-# gem "rmagick" # para mimes de imagenes subidas FIXME
+gem "rmagick" # para mimes de imagenes subidas FIXME
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

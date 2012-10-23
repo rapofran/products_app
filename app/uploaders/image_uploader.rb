@@ -1,11 +1,11 @@
 # encoding: utf-8
-# require 'carrierwave/processing/mime_types'
-# require 'carrierwave/processing/rmagick'
+require 'carrierwave/processing/mime_types'
+require 'carrierwave/processing/rmagick'
 
 class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
+  include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
@@ -42,7 +42,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :scale => [50, 50]
+    process :resize_to_fit => [50, 50]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
