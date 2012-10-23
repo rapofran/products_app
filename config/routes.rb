@@ -14,7 +14,7 @@ ProductsApp::Application.routes.draw do
   # get "static_pages/contact"  
   match '/contact', to: 'static_pages#contact'
 
-  root :to => "static_pages#home" #index me muestra la def index de home controller
+  root :to => "products#index" #index me muestra la def index de home controller
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
