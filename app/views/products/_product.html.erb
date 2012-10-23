@@ -1,0 +1,10 @@
+<!-- #no se usa -->
+<li>
+  <%= product.image %>
+  <%= product.name %>
+  <%= product.description %>
+  <%= product.price %>
+  <%= link_to 'Show', product %>
+  <%= link_to 'Edit', edit_product_path(product) %>
+  <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+</li>

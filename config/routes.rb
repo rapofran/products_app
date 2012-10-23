@@ -1,7 +1,6 @@
 ProductsApp::Application.routes.draw do
 
-  resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :products
 
   # get "static_pages/home"
   match '/home', to: 'static_pages#home'  
