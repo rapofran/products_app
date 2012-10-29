@@ -1,6 +1,16 @@
 ProductsApp::Application.routes.draw do
 
-  resources :products
+  # match ':products_controller(/:sell(/:id))'
+
+  resources :product_solds
+
+  # resources :products
+
+  resources :products do
+    get 'sell', :on => :member
+  end
+
+  # match '/products/:sell' => 'products#sell'
 
   # get "static_pages/home"
   match '/home', to: 'static_pages#home'  
@@ -15,6 +25,7 @@ ProductsApp::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
 
   root :to => "products#index" #index me muestra la def index de home controller
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

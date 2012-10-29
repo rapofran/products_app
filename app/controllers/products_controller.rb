@@ -81,4 +81,23 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def sell
+    @product    = Product.find(params[:id])
+    productSold = ProductSold.new
+
+    productSold.price       = @product.price
+    productSold.product_id  = @product.id
+
+    if productSold.save
+      redirect_to @product, notice: 'Product was successfully sold.' 
+    else
+      render action: "new" 
+    end
+
+    # productSold.save
+
+    # redirect root_path
+  end
+  
 end
