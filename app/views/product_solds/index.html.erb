@@ -2,10 +2,10 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
+
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:product_id) %></th>
       <th><%= model_class.human_attribute_name(:price) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -15,7 +15,6 @@
   <tbody>
     <% @product_solds.each do |product_sold| %>
       <tr>
-        <td><%= link_to product_sold.id, product_sold_path(product_sold) %></td>
         <td><%= product_sold.product_id %></td>
         <td><%= product_sold.price %></td>
         <td><%=l product_sold.created_at %></td>

@@ -2,7 +2,7 @@ class ProductSoldsController < ApplicationController
   # GET /product_solds
   # GET /product_solds.json
   def index
-    @product_solds = ProductSold.all
+    @product_solds = ProductSold.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb

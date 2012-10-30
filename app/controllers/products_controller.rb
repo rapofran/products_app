@@ -2,24 +2,14 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    # @products = Product.all
-
-    # respond_to do |format|
-    #   format.html # index.html.erb
-    #   format.json { render json: @products }
-    # end
-    @products = Product.paginate(page: params[:page])
+    @products = Product.search(params[:search])
+    #.paginate(page: params[:page])
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @product }
-    end
   end
 
   # GET /products/new
@@ -82,22 +72,15 @@ class ProductsController < ApplicationController
     end
   end
 
+  # vende al producto este. la logica esta en el modelo
   def sell
-    @product    = Product.find(params[:id])
-    productSold = ProductSold.new
+    @product = Product.find(params[:id])
 
-    productSold.price       = @product.price
-    productSold.product_id  = @product.id
-
-    if productSold.save
+    if @product.sell
       redirect_to @product, notice: 'Product was successfully sold.' 
     else
       render action: "new" 
     end
-
-    # productSold.save
-
-    # redirect root_path
   end
   
 end

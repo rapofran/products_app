@@ -10,6 +10,8 @@ gem "twitter-bootstrap-rails"
 gem 'carrierwave' #upload de imagenes, y thumbnail
 gem "rmagick" # para mimes de imagenes subidas FIXME
 
+# gem "ransack"
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

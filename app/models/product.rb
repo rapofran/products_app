@@ -8,4 +8,22 @@ class Product < ActiveRecord::Base
 
   has_many :product_sold
 
+  def self.search(search)
+    if search
+      where('name LIKE ?', "%#{search}%")
+    else
+      all
+    end
+  end
+
+  #crea un ProductSold
+  def sell
+    productSold = ProductSold.new
+
+    productSold.price       = self.price
+    productSold.product_id  = self.id
+
+    productSold.save
+  end
+
 end
