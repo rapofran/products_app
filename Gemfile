@@ -10,6 +10,8 @@ gem "twitter-bootstrap-rails"
 gem 'carrierwave' #upload de imagenes, y thumbnail
 gem "rmagick" # para mimes de imagenes subidas FIXME
 
+gem 'bootstrap-datepicker-rails'
+
 # gem "ransack"
 
 # Bundle edge Rails instead:

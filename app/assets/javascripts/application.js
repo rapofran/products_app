@@ -13,3 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require bootstrap-datepicker
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.es
+
+
+$(document).ready(function() {
+   $('.datepicker').datepicker({"autoclose" : true});
+ });
