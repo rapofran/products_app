@@ -18,5 +18,5 @@
 
 
 $(document).ready(function() {
-   $('.datepicker').datepicker({"autoclose" : true});
+   $('.datepicker').datepicker({ "format" : "dd-mm-yyyy", "autoclose" : true });
  });
