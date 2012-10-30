@@ -5,12 +5,12 @@ class ProductSold < ActiveRecord::Base
 
   belongs_to :product
 
-  # def self.search(search)
-  #   if search
-  #     where('name LIKE ?', "%#{search}%")
-  #   else
-  #     all
-  #   end
-  # end
+  def self.search(search)
+    if search
+      where('price < ?', "%#{search}%")
+    else
+      all
+    end
+  end
 
 end

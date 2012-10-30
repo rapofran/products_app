@@ -2,12 +2,8 @@ class ProductSoldsController < ApplicationController
   # GET /product_solds
   # GET /product_solds.json
   def index
-    @product_solds = ProductSold.search(params[:search])
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @product_solds }
-    end
+    # @product_solds = ProductSold.paginate(page: params[:page]).search(params[:search])
+    @product_solds = ProductSold.paginate(page: params[:page])
   end
 
   # GET /product_solds/1
