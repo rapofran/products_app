@@ -28,7 +28,7 @@
   <tbody>
     <% @product_solds.each do |product_sold| %>
       <tr>
-        <td><%= product_sold.product_id %></td>
+        <td><%= product_sold.product.name %></td>
         <td><%= product_sold.price %></td>
         <td><%=l product_sold.created_at %></td>
       </tr>
