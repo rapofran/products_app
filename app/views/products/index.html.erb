@@ -3,26 +3,31 @@
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
 
-<%= form_tag products_path, :method => 'get', :class => 'form-search' do %>
-  <p>
-    <%= text_field_tag :search, params[:search], :class => 'input-large' %>
-    <%= submit_tag "Search", :name => nil, :class => 'btn btn-primary' %>
-  </p>
+<div class="search-form">
+  <%= form_tag products_path, :method => 'get', :class => 'form-search' do %>
+    <p>
+      <%= text_field_tag :search, params[:search], :class => 'input-large' %>
+      <%= submit_tag "Search", :name => nil, :class => 'btn btn-primary' %>
+
+    </p>
+
+  <% end %>
+
+</div>
+
+<div class="new_button">
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_product_path,
+              :class => 'btn btn-primary' %>
+</div>
+
+<% @products.each do |product| %>
+  <div class="product">
+    <%= link_to (image_tag product.image_url(:thumb).to_s , :alt =>product.name),
+                  :controller => "products",
+                  :action => "sell",
+                  :id => product 
+    %>
+    <p>$<%= product.price %>, <%= product.name %></p>    
+  </div>
 <% end %>
-
-    <% @products.each do |product| %>
-      <div style="float: left; margin 10px; padding: 10px;">
-
-        <%= link_to (image_tag product.image_url(:thumb).to_s , :alt =>product.name),
-                      :controller => "products",
-                      :action => "sell",
-                      :id => product, 
-		      :class => "thumbnail"%>
-        <p>$<%= product.price %></p>
-        
-      </div>
-    <% end %>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_product_path,
-            :class => 'btn btn-primary' %>
