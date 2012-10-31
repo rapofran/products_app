@@ -5,9 +5,9 @@ class ProductSold < ActiveRecord::Base
 
   belongs_to :product
 
-  def self.search(search)
+  def self.search(params)
     if search
-      where('price < ?', "%#{search}%")
+      where(:created_at => params[:date_from]..params[:date_to])
     else
       all
     end

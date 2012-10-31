@@ -5,11 +5,11 @@
 
 <%= form_tag product_solds_path, :method => 'get', :class => 'form-search' do %>
   <p>
-    <%= text_field_tag :date_from, params[:search], 
+    <%= text_field_tag :date_from, params[:date_from], 
                         'data-behaviour' => 'datepicker',
                         :class => 'datepicker input-medium', 
                         'placeholder' => 'Date from'%>
-    <%= text_field_tag :date_to, params[:search], 
+    <%= text_field_tag :date_to, params[:date_to], 
                         'data-behaviour' => 'datepicker',
                         :class => 'datepicker input-medium', 
                         'placeholder' => 'Date to'%>

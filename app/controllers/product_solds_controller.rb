@@ -2,7 +2,7 @@ class ProductSoldsController < ApplicationController
   # GET /product_solds
   # GET /product_solds.json
   def index
-    # @product_solds = ProductSold.paginate(page: params[:page]).search(params[:search])
+    #@product_solds = ProductSold.paginate(page: params[:page]).search(params)
     @product_solds = ProductSold.paginate(page: params[:page])
   end
 
